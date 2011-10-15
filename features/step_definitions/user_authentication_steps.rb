@@ -49,7 +49,7 @@ When /^I fill in the form and submit:$/ do |table|
 end
 
 Then /^I have an account$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content "Welcome! You have signed up successfully."
 end
 
 

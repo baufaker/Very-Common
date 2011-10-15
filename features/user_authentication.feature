@@ -22,7 +22,7 @@ Feature: User authentication
     Given that I'm at create account page
     When I fill in the form and submit:
       | email            | password | password_confirmation |
-      | john@example.com | 123123   | 123123                |
+      | mary@example.com | 123123   | 123123                |
     Then I have an account
   
   Scenario: Edit account
