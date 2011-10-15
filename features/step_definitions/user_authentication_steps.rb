@@ -17,5 +17,5 @@ Then /^I am logged in$/ do
 end
 
 Then /^I am at dashboard page$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content "Dashboard"
 end
