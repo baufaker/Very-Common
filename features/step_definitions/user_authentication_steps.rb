@@ -3,17 +3,17 @@ Given /^that I am at login page$/ do
 end
 
 Given /^user "([^"]*)" with password "([^"]*)" exists$/ do |email, password|
-  User.create!(email: email, password: password, password_confirmation: password)
+  @user = User.create!(email: email, password: password, password_confirmation: password)
 end
 
 When /^I login with "([^"]*)" and with password "([^"]*)"$/ do |email, password|
-  fill_in "email", with: email
-  fill_in "password", with: password
-  click_button ""
+  fill_in "Email", with: email
+  fill_in "Password", with: password
+  click_button "Sign in"
 end
 
 Then /^I am logged in$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content "Signed in successfully."
 end
 
 Then /^I am at dashboard page$/ do
