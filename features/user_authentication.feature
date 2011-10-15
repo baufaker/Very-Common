@@ -26,5 +26,11 @@ Feature: User authentication
     Then I have an account
   
   Scenario: Edit account
+    Given that I already have an account
+    And I'm logged in
+    And I'm on the editing page
+    When I change any information
+    Then MY information is different
+  
   Scenario: Destroy account
     
