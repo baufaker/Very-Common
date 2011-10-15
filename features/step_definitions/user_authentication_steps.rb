@@ -21,7 +21,6 @@ Then /^I am at dashboard page$/ do
 end
 
 
-
 Given /^that I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
   Given %{that I am at login page}
   When %{I login with "john@example.com" and with password "123123"}
@@ -38,6 +37,20 @@ Then /^I logged out$/ do
 end
 
 
+Given /^that I'm at create account page$/ do
+  visit "/users/sign_up"
+end
+
+When /^I fill in the form and submit:$/ do |table|
+  fill_in "Email", with: table.hashes.first["email"]
+  fill_in "Password", with: table.hashes.first["password"]
+  fill_in "Password confirmation", with: table.hashes.first["password_confirmation"]
+  click_button "Sign up"
+end
+
+Then /^I have an account$/ do
+  pending # express the regexp above with the code you wish you had
+end
 
 
 

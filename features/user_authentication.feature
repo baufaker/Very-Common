@@ -19,6 +19,12 @@ Feature: User authentication
     
     
   Scenario: Create account
+    Given that I'm at create account page
+    When I fill in the form and submit:
+      | email            | password | password_confirmation |
+      | john@example.com | 123123   | 123123                |
+    Then I have an account
+  
   Scenario: Edit account
   Scenario: Destroy account
     
