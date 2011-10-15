@@ -19,3 +19,38 @@ end
 Then /^I am at dashboard page$/ do
   page.should have_content "Dashboard"
 end
+
+
+
+Given /^that I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
+  Given %{that I am at login page}
+  When %{I login with "john@example.com" and with password "123123"}
+  Then %{I am logged in}
+  And %{I am at dashboard page}
+end
+
+When /^I click "([^"]*)"$/ do |link|
+  click_link link
+end
+
+Then /^I logged out$/ do
+  page.should have_content "Signed out successfully."
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
